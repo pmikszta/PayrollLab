@@ -107,11 +107,14 @@ public class Payroll {
 
     // Method to display payroll info with breakdown
     public void displayPayroll() {
+        
         double grossPay = calculateGrossPay();
         double socialSecurity = grossPay * SocialSecurityRate;
         double federalTax = grossPay * FederalTaxRate;
         double stateTax = grossPay * StateTaxRate;
         double totalDeductions = calculateDeductions();
+
+
         System.out.println("Payroll File");
         System.out.println("Employee Name: " + Name);
         System.out.println("Number Of Depenants: " + Dependants);
