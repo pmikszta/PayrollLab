@@ -13,7 +13,7 @@ class PayrollTest {
     void setUp() {
         // Create a Payroll instance before each test
         employee = new Payroll("John Doe", 20.0, 40, 15.0, 25.0, 2, 2);
-        // Set static tax rates for consistent testing
+        // Set static tax rates for consistent testing not really needed
         Payroll.setFederalTaxRate(0.15);
         Payroll.setStateTaxRate(0.05);
         Payroll.setSocialSecurityRate(0.062);

@@ -11,10 +11,14 @@ public class Payroll {
     private int Dependants;
     private int InsurancePlan;
 
+
+
     // Static Fields (shared across all employees)
     private static double FederalTaxRate = 0.15;     // 15%
     private static double StateTaxRate = 0.05;       // 5%
     private static double SocialSecurityRate = 0.062; // 6.2%
+
+
 
     // Constructor
     public Payroll(String Name, double HourlyRate, double HoursWorked,
@@ -73,6 +77,7 @@ public class Payroll {
         }    
     }
 
+
     // Method to calculate deductions
     public double calculateDeductions() {
         double grossPay = calculateGrossPay();
@@ -83,9 +88,11 @@ public class Payroll {
         return socialSecurity + federalTax + stateTax + UnionDues + Insurance;
     }
 
+
     // Method to for getting inscurance 
     public String calculateInsurancePlan() {
      if (InsurancePlan == 1) {
+        // if else four times no proper error handling
             return "no plan";
         } else if (InsurancePlan == 2) {
             return "single plan";
@@ -107,14 +114,15 @@ public class Payroll {
 
     // Method to display payroll info with breakdown
     public void displayPayroll() {
-        
+
+        //caculate items with current values
         double grossPay = calculateGrossPay();
         double socialSecurity = grossPay * SocialSecurityRate;
         double federalTax = grossPay * FederalTaxRate;
         double stateTax = grossPay * StateTaxRate;
         double totalDeductions = calculateDeductions();
 
-
+        // output everything to screen
         System.out.println("Payroll File");
         System.out.println("Employee Name: " + Name);
         System.out.println("Number Of Depenants: " + Dependants);
